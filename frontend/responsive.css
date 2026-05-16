@@ -1,0 +1,199 @@
+/* ==================== RESPONSIVE STYLES ==================== */
+
+/* ==================== TABLET & MEDIUM SCREENS (992px and below) ==================== */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .booking-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .section-title {
+        font-size: 2.3rem;
+    }
+    
+    .nav-menu {
+        gap: 1.5rem;
+    }
+}
+
+/* ==================== MOBILE & SMALL TABLETS (768px and below) ==================== */
+@media (max-width: 768px) {
+    /* Navigation */
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        flex-direction: column;
+        background: linear-gradient(135deg, rgba(184, 134, 11, 0.98), rgba(205, 133, 63, 0.98));
+        width: 100%;
+        padding: 2rem;
+        transition: left 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        gap: 0.5rem;
+        align-items: flex-start;
+        z-index: 999;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        width: 100%;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 12px 15px;
+        border-radius: 8px;
+        transition: background 0.3s;
+    }
+    
+    .nav-link:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    .nav-link-signup {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 12px 15px;
+        text-align: center;
+    }
+    
+    .nav-link-signup:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+    
+    .menu-toggle {
+        display: flex;
+    }
+    
+    /* Hero Section */
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    /* Forms */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+ 
+    /* Sections */
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    /* Modal */
+    .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .modal-body {
+        padding: 1.5rem;
+    }
+    
+    .modal-header {
+        padding: 1.5rem;
+    }
+    
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    /* Logo */
+    .logo-image {
+        height: 32px;
+    }
+    
+    .footer-title .logo-image {
+        height: 28px;
+    }
+}
+
+/* ==================== SMALL MOBILE (480px and below) ==================== */
+@media (max-width: 480px) {
+    /* Logo */
+    .logo {
+        font-size: 1.3rem;
+    }
+    
+    .logo-icon {
+        font-size: 1.5rem;
+    }
+    
+    .logo-image {
+        height: 28px;
+    }
+    
+    .logo-text {
+        font-size: 1.1rem;
+    }
+    
+    .footer-title .logo-image {
+        height: 24px;
+    }
+    
+    /* Hero Section */
+    .hero-title {
+        font-size: 1.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    .cta-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    /* Grids */
+    .features-grid,
+    .pandits-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Cards */
+    .feature-card,
+    .pandit-card,
+    .contact-card {
+        padding: 1.5rem;
+    }
+    
+   
+    
+    /* Modal */
+    .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .pandits-scroll-wrapper {
+        max-height: 420px;   /* mobile */
+        -webkit-overflow-scrolling: touch;
+    }
+}
+@media (max-width: 768px) {
+    .index-pandits-scroll {
+        max-height: 300px;
+        -webkit-overflow-scrolling: touch;
+    }
+}

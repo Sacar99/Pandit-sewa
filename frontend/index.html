@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Book verified pandits online in Nepal - Pandit Sewa">
+    <title>Pandit Sewa - घरमै बसेर Pandit बुक गर्नुहोस्</title>
+
+    <!-- CSS Files - Import in Order -->
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="components.css">
+    <link rel="stylesheet" href="layout.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <img src="panditsewa.jpeg" alt="Pandit Sewa Logo" class="logo-image">
+                    <span class="logo-text">पण्डित सेवा</span>
+
+                </div>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#booking" class="nav-link">Book Puja</a></li>
+                    <li><a href="index.html#pandits" class="nav-link">All Pandits</a></li>
+
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                    <li><a href="#" class="nav-link" onclick="openLoginModal(); return false;">Login</a></li>
+                    <li><a href="#" class="nav-link nav-link-signup" onclick="openSignupModal(); return false;">Sign
+                            Up</a></li>
+                </ul>
+
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span class="hamburger"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title animate-fade-in">घरमै बसेर Pandit बुक गर्नुहोस्</h1>
+            <p class="hero-subtitle animate-fade-in-delay">Sarad, Rudri, Griha Puja सबै प्रकारका पूजाका लागि verified
+                pandit, puja samagri delivery र secure online payment</p>
+            <button class="cta-btn animate-fade-in-delay-2" onclick="scrollToSection('booking')">
+                <span>Book Now</span>
+                <span class="btn-icon">→</span>
+            </button>
+        </div>
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="services">
+        <div class="container">
+            <h2 class="section-title">हाम्रा विशेषताहरू</h2>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">💳</div>
+                    <h3 class="feature-title">Secure Payment</h3>
+                    <p class="feature-desc">eSewa, Khalti, IME Pay support</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🛍️</div>
+                    <h3 class="feature-title">Puja Samagri</h3>
+                    <p class="feature-desc">सबै पूजा सामाग्री delivery सहित</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3 class="feature-title">Verified Pandits</h3>
+                    <p class="feature-desc">अनुभवी र प्रमाणित पण्डितहरू</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="section section-alt" id="booking">
+        <div class="container">
+            <h2 class="section-title">पूजा बुकिङ गर्नुहोस्</h2>
+            <div class="booking-container">
+                <form class="booking-form" id="bookingForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pujaType">पूजाको प्रकार *</label>
+                            <select id="pujaType" name="pujaType" required>
+                                <option value="">Select Puja Type</option>
+                                <option value="Sarad">Sarad</option>
+                                <option value="Rudri">Rudri</option>
+                                <option value="Griha Puja">Griha Puja</option>
+                                <option value="Bratabandha">Bratabandha</option>
+                                <option value="Satyanarayan">Satyanarayan Puja</option>
+                                <option value="Pasni">Pasni</option>
+                                <option value="Wedding">Wedding Ceremony</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="pujaDate">मिति *</label>
+                            <input type="date" id="pujaDate" name="pujaDate" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pujaTime">समय *</label>
+                            <input type="time" id="pujaTime" name="pujaTime" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">स्थान *</label>
+                            <input type="text" id="location" name="location" placeholder="तपाईंको पूरा ठेगाना" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="customerName">तपाईंको नाम *</label>
+                            <input type="text" id="customerName" name="customerName" placeholder="पूरा नाम" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customerPhone">फोन नम्बर *</label>
+                            <input type="tel" id="customerPhone" name="customerPhone" placeholder="98XXXXXXXX"
+                                pattern="[0-9]{10}" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">थप जानकारी (Optional)</label>
+                        <textarea id="notes" name="notes" rows="3"
+                            placeholder="कुनै विशेष आवश्यकता भए यहाँ लेख्नुहोस्"></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <span>Available Pandits हेर्नुहोस्</span>
+                        <span class="btn-loader" id="formLoader"></span>
+                    </button>
+                </form>
+
+                <div class="booking-info">
+                    <div class="info-card">
+                        <h3>📋 Booking Process</h3>
+                        <ol>
+                            <li>Fill booking form</li>
+                            <li>Select pandit</li>
+                            <li>Confirm details</li>
+                            <li>Make payment</li>
+                            <li>Track pandit</li>
+                        </ol>
+                    </div>
+                    <div class="info-card">
+                        <h3>💰 Pricing</h3>
+                        <p>Starting from <strong>Rs. 4,500</strong></p>
+                        <p>Includes puja samagri</p>
+                        <p>No hidden charges</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pandits Section (Limited - showing 6) -->
+    <section class="section" id="pandits">
+        <div class="container">
+            <h2 class="section-title">उपलब्ध पण्डितहरू</h2>
+
+            <div id="panditsLoading" class="loading-spinner">
+                <div class="spinner"></div>
+                <p>Loading pandits...</p>
+            </div>
+
+            <div id="panditsError" class="error-message" style="display: none;"></div>
+
+            <div class="index-pandits-scroll">
+                <div class="pandits-grid" id="panditsGrid"></div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>Phone</h3>
+                    <p>+977 980-0000000</p>
+                    <p>+977 981-1111111</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>Email</h3>
+                    <p>info@panditsewa.com</p>
+                    <p>support@panditsewa.com</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <p>Kathmandu, Nepal</p>
+                    <p>Bagmati Pradesh</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Confirmation Modal -->
+    <div class="modal" id="bookingModal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Booking Confirmation</h2>
+                <button class="modal-close" onclick="closeModal()" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+            <div class="modal-footer">
+                <button class="confirm-btn" onclick="confirmBooking()">
+                    <span>Confirm & Pay</span>
+                    <span class="btn-loader" id="confirmLoader"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-overlay" onclick="closeLoginModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Login</h2>
+                <button class="modal-close" onclick="closeLoginModal()" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm" onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" placeholder="Enter password" required>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <span>Login</span>
+                    </button>
+                </form>
+                <p style="text-align: center; margin-top: 1rem; color: var(--gray);">
+                    Don't have an account? <a href="#" onclick="closeLoginModal(); openSignupModal(); return false;"
+                        style="color: var(--primary); font-weight: 600;">Sign Up</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enhanced Signup Modal with Pandit Fields -->
+    <div class="modal" id="signupModal">
+        <div class="modal-overlay" onclick="closeSignupModal()"></div>
+        <div class="modal-content" style="max-width: 700px;">
+            <div class="modal-header">
+                <h2>Sign Up</h2>
+                <button class="modal-close" onclick="closeSignupModal()" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="signupForm" onsubmit="handleSignup(event)">
+                    <!-- Basic Fields -->
+                    <div class="form-group">
+                        <label for="signupName">Full Name *</label>
+                        <input type="text" id="signupName" placeholder="Your full name" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="signupEmail">Email *</label>
+                            <input type="email" id="signupEmail" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPhone">Phone Number *</label>
+                            <input type="tel" id="signupPhone" placeholder="98XXXXXXXX" pattern="[0-9]{10}" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupPassword">Password *</label>
+                        <input type="password" id="signupPassword" placeholder="Create password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signupRole">Sign up as *</label>
+                        <select id="signupRole" onchange="togglePanditFields()" required>
+                            <option value="">Select account type</option>
+                            <option value="customer">As a Customer - Book pujas</option>
+                            <option value="pandit">As a Pandit - Provide puja services</option>
+                        </select>
+                    </div>
+
+                    <!-- Pandit-Specific Fields (Hidden by default) -->
+                    <div id="panditFields"
+                        style="display: none; margin-top: 1rem; padding: 1rem; background: var(--light); border-radius: 8px;">
+                        <h4 style="color: var(--secondary); margin-bottom: 1rem;">Pandit Details</h4>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="panditExperience">Experience (years) *</label>
+                                <input type="number" id="panditExperience" placeholder="5" min="0" max="50">
+                            </div>
+                            <div class="form-group">
+                                <label for="panditFee">Fee (रू) *</label>
+                                <input type="number" id="panditFee" placeholder="5000" min="1000" step="100"
+                                    value="5000">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="panditLocation">Location *</label>
+                            <input type="text" id="panditLocation" placeholder="Kathmandu, Thamel">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="panditExpertise">Expertise *</label>
+                            <input type="text" id="panditExpertise" placeholder="Rudri, Sarad, Griha Puja">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="panditImage">Photo*</label>
+                            <input type="file" id="panditImage" placeholder="photo.jpg">
+                            <small style="color: var(--gray); font-size: 0.85rem;">या कुनै image URL राख्नुहोस्</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="panditBio">Bio (Optional)</label>
+                            <textarea id="panditBio" rows="3"
+                                placeholder="आफ्नो अनुभव र विशेषज्ञता बारे केही लेख्नुहोस्"></textarea>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn" style="margin-top: 1.5rem;">
+                        <span>Create Account</span>
+                    </button>
+                </form>
+                <p style="text-align: center; margin-top: 1rem; color: var(--gray);">
+                    Already have an account? <a href="#" onclick="closeSignupModal(); openLoginModal(); return false;"
+                        style="color: var(--primary); font-weight: 600;">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-overlay" onclick="closeSuccessModal()"></div>
+        <div class="modal-content modal-success">
+            <div class="success-icon">✅</div>
+            <h2>Booking Successful!</h2>
+            <p id="successMessage"></p>
+            <button class="confirm-btn" onclick="closeSuccessModal()">Got it</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3 class="footer-title">
+                        <img src="panditsewa.jpeg" alt="Pandit Sewa Logo" class="logo-image">
+                        पण्डित सेवा
+                    </h3>
+                    <p>नेपालको पहिलो र भरपर्दो online pandit booking platform</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#booking">Book Puja</a></li>
+                        <li><a href="#pandits">All Pandits</a></li>
+
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#tracking">Track Order</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Newsletter</h4>
+                    <p>Get updates on new pandits and offers</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pandit Sewa. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- JavaScript Files -->
+    <script src="app-config.js"></script>
+    <script src="app-core.js"></script>
+    <script src="app-auth-utils.js"></script>
+
+    <script>
+        // Initialization happens in app-core.js via initializeApp()
+        // No additional initialization needed here
+    </script>
+</body>
+
+</html>

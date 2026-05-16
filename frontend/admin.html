@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Admin Dashboard - Pandit Sewa</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            background: #f4f6f8;
+        }
+
+        header {
+            background: #2d2f91;
+            color: white;
+            padding: 16px 24px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .container {
+            padding: 24px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            padding: 12px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            background: #e0e0e0;
+            font-weight: 600;
+        }
+
+        .tab-btn.active {
+            background: #2d2f91;
+            color: white;
+        }
+
+        .table-container {
+            background: white;
+            border-radius: 8px;
+            padding: 16px;
+            overflow-x: auto;
+            max-height: 65vh;
+            overflow-y: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 800px;
+        }
+
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background: #f0f2f5;
+        }
+
+        tr:hover {
+            background: #f9f9f9;
+        }
+
+        .empty {
+            padding: 40px;
+            text-align: center;
+            color: #777;
+        }
+
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    🕉️ Pandit Sewa — Admin Dashboard
+</header>
+
+<div class="container">
+
+    <!-- TABS -->
+    <div class="tabs">
+        <button class="tab-btn active" onclick="loadCustomers()">Customers</button>
+        <button class="tab-btn" onclick="loadPandits()">Pandits</button>
+        <button class="tab-btn" onclick="loadBookings()">Bookings</button>
+    </div>
+
+    <!-- DATA TABLE -->
+    <div class="table-container">
+        <div id="dataArea" class="empty">Select a tab to view data</div>
+    </div>
+
+</div>
+
+<script>
+    const API = 'http://localhost:3000/api';
+    const dataArea = document.getElementById('dataArea');
+    const tabs = document.querySelectorAll('.tab-btn');
+
+    function setActive(btn) {
+        tabs.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+    }
+
+    /* ---------------- CUSTOMERS ---------------- */
+    async function loadCustomers() {
+        setActive(event.target);
+        dataArea.innerHTML = 'Loading customers...';
+
+        try {
+            const res = await fetch(`${API}/users`);
+            const json = await res.json();
+
+            if (!json.success || json.data.length === 0) {
+                dataArea.innerHTML = '<div class="empty">No customers found</div>';
+                return;
+            }
+
+            dataArea.innerHTML = `
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Role</th>
+                    </tr>
+                    ${json.data
+                        .filter(u => u.role === 'customer')
+                        .map(u => `
+                        <tr>
+                            <td>${u.id}</td>
+                            <td>${u.name}</td>
+                            <td>${u.email}</td>
+                            <td>${u.phone}</td>
+                            <td>${u.role}</td>
+                        </tr>
+                    `).join('')}
+                </table>
+            `;
+        } catch {
+            dataArea.innerHTML = '<div class="empty">Failed to load customers</div>';
+        }
+    }
+
+    /* ---------------- PANDITS ---------------- */
+    async function loadPandits() {
+        setActive(event.target);
+        dataArea.innerHTML = 'Loading pandits...';
+
+        try {
+            const res = await fetch(`${API}/pandits`);
+            const json = await res.json();
+
+            if (!json.success || json.data.length === 0) {
+                dataArea.innerHTML = '<div class="empty">No pandits found</div>';
+                return;
+            }
+
+            dataArea.innerHTML = `
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Expertise</th>
+                        <th>Experience</th>
+                        <th>Fee</th>
+                        <th>Location</th>
+                    </tr>
+                    ${json.data.map(p => `
+                        <tr>
+                            <td>${p.id}</td>
+                            <td>${p.name}</td>
+                            <td>${p.expertise}</td>
+                            <td>${p.experience} yrs</td>
+                            <td>Rs. ${p.fee}</td>
+                            <td>${p.location}</td>
+                        </tr>
+                    `).join('')}
+                </table>
+            `;
+        } catch {
+            dataArea.innerHTML = '<div class="empty">Failed to load pandits</div>';
+        }
+    }
+
+    /* ---------------- BOOKINGS ---------------- */
+    async function loadBookings() {
+        setActive(event.target);
+        dataArea.innerHTML = 'Loading bookings...';
+
+        try {
+            const res = await fetch(`${API}/bookings`);
+            const json = await res.json();
+
+            if (!json.success || json.data.length === 0) {
+                dataArea.innerHTML = '<div class="empty">No bookings found</div>';
+                return;
+            }
+
+            dataArea.innerHTML = `
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Customer</th>
+                        <th>Pandit</th>
+                        <th>Puja</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                    </tr>
+                    ${json.data.map(b => `
+                        <tr>
+                            <td>${b.id}</td>
+                            <td>${b.customer_name}</td>
+                            <td>${b.pandit_name}</td>
+                            <td>${b.puja_type}</td>
+                            <td>${b.puja_date}</td>
+                            <td>${b.puja_time}</td>
+                            <td>${b.status}</td>
+                        </tr>
+                    `).join('')}
+                </table>
+            `;
+        } catch {
+            dataArea.innerHTML = '<div class="empty">Failed to load bookings</div>';
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,607 @@
+/* ==================== BUTTONS ==================== */
+.cta-btn {
+    background: var(--white);
+    color: var(--primary);
+    padding: 15px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.btn-icon {
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.cta-btn:hover .btn-icon {
+    transform: translateX(5px);
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: var(--white);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1rem;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(184, 134, 11, 0.3);
+}
+
+.submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+.confirm-btn {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: var(--white);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.confirm-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(184, 134, 11, 0.3);
+}
+
+.book-pandit-btn {
+    background: var(--primary);
+    color: var(--white);
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: var(--transition);
+}
+
+.book-pandit-btn:hover {
+    background: var(--accent);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+    display: none;
+    z-index: 999;
+}
+
+.back-to-top.active {
+    display: block;
+}
+
+.back-to-top:hover {
+    background: var(--accent);
+    transform: translateY(-5px);
+}
+
+/* ==================== CARDS ==================== */
+.feature-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(184, 134, 11, 0.2);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(101, 67, 33, 0.2);
+}
+
+.feature-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.feature-title {
+    font-size: 1.4rem;
+    color: var(--secondary);
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.feature-desc {
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+/* ==================== COMPACT PANDIT CARD ==================== */
+.pandit-card {
+    background: white;
+    padding: 1rem;              /* ↓ padding */
+    border-radius: 12px;
+    display: flex;              /* horizontal layout */
+    align-items: center;
+    gap: 12px;
+}
+
+
+.pandit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(101, 67, 33, 0.2);
+}
+
+.pandit-card img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+.pandit-info {
+    padding: 1.8rem;
+}
+
+.pandit-name {
+    font-size: 1.4rem;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.pandit-specialty {
+    color: var(--gray);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.pandit-location {
+    color: var(--gray);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.pandit-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+    padding: 0.8rem 0;
+    border-top: 1px solid var(--gray-light);
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.pandit-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.pandit-exp {
+    color: var(--gray);
+    font-size: 0.9rem;
+}
+
+.pandit-fee {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+/* ==================== SEE MORE CARD ==================== */
+.see-more-card {
+    background: linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(205, 133, 63, 0.1));
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 2px dashed rgba(184, 134, 11, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    transition: var(--transition);
+}
+
+.see-more-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(101, 67, 33, 0.2);
+    border-color: var(--primary);
+}
+
+.see-more-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: var(--secondary);
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.see-more-btn:hover {
+    color: var(--primary);
+    transform: scale(1.05);
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgba(184, 134, 11, 0.2);
+}
+
+.info-card h3 {
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.info-card ol {
+    padding-left: 1.5rem;
+}
+
+.info-card ol li {
+    margin-bottom: 0.5rem;
+    color: var(--gray);
+}
+
+.info-card p {
+    margin-bottom: 0.5rem;
+    color: var(--gray);
+}
+
+.info-card strong {
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.contact-card {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    border: 1px solid rgba(184, 134, 11, 0.2);
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.contact-card h3 {
+    color: var(--secondary);
+    margin-bottom: 1rem;
+}
+
+.contact-card p {
+    color: var(--gray);
+    margin-bottom: 0.5rem;
+}
+
+/* ==================== FORMS ==================== */
+.booking-form {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgba(184, 134, 11, 0.2);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--secondary);
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px 15px;
+    border: 2px solid var(--gray-light);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
+}
+
+/* ==================== MODAL ==================== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: var(--border-radius);
+    max-width: 600px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    z-index: 2001;
+    animation: modalSlideUp 0.3s ease-out;
+    border: 2px solid rgba(184, 134, 11, 0.3);
+}
+
+.modal-header {
+    padding: 2rem;
+    border-bottom: 1px solid var(--gray-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    color: var(--secondary);
+}
+
+.modal-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--gray);
+    cursor: pointer;
+    transition: var(--transition);
+    line-height: 1;
+}
+
+.modal-close:hover {
+    color: var(--dark);
+}
+
+.modal-body {
+    padding: 2rem;
+}
+
+.modal-footer {
+    padding: 1.5rem 2rem;
+    border-top: 1px solid var(--gray-light);
+}
+
+.modal-success {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.success-icon {
+    font-size: 5rem;
+    margin-bottom: 1.5rem;
+}
+
+.modal-success h2 {
+    color: var(--success);
+    margin-bottom: 1rem;
+}
+
+/* ==================== LOADING & ERROR ==================== */
+.loading-spinner {
+    text-align: center;
+    padding: 3rem;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid var(--gray-light);
+    border-top: 4px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+.btn-loader {
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid var(--white);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    display: none;
+}
+
+.error-message {
+    background: #fee;
+    color: var(--danger);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #fcc;
+}
+
+/* ==================== TRACKING ==================== */
+.tracking-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tracking-search {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.tracking-input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid var(--gray-light);
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
+
+.tracking-input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.tracking-result {
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid rgba(184, 134, 11, 0.2);
+}
+
+.tracking-steps {
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.tracking-steps::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gray-light);
+    z-index: 0;
+}
+
+.tracking-step {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+}
+
+.step-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--gray-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 0.8rem;
+    font-weight: bold;
+    color: var(--gray);
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.step-icon.active {
+    background: var(--success);
+    color: var(--white);
+    box-shadow: 0 0 0 4px rgba(85, 107, 47, 0.2);
+}
+
+.pandit-info h3 {
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+}
+
+.pandit-info p {
+    font-size: 0.9rem;
+    margin: 0;
+    opacity: 0.85;
+}
