@@ -1,5 +1,15 @@
 // ==================== CONFIG & SAMPLE DATA ====================
-const API_URL = 'http://localhost:3000/api';
+// Automatically detects local environment vs deployed cloud environment.
+// Replace 'https://pandit-sewa-backend.onrender.com' with your actual Render URL after deploying your backend!
+const BACKEND_PROD_URL = 'https://pandit-sewa-backend.onrender.com/api';
+
+const isLocalhost = Boolean(
+    window.location.hostname === 'localhost' ||
+    window.location.hostname === '127.0.0.1' ||
+    window.location.protocol === 'file:'
+);
+
+const API_URL = isLocalhost ? 'http://localhost:3000/api' : BACKEND_PROD_URL;
 
 // Sample Data (Fallback)
 const SAMPLE_PANDITS = [

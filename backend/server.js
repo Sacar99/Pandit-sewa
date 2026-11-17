@@ -8,7 +8,7 @@ const db = require('./db');
 const authMiddleware = require('./authMiddleware');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || 'panditsewa_super_secret_jwt_key_2025';
 
 // Middleware
@@ -17,6 +17,16 @@ app.use(bodyParser.json({ limit: '10mb' })); // increased limit for base64 image
 app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 
 // ==================== ROUTES ====================
+
+// Root Endpoint
+app.get('/', (req, res) => {
+    res.json({
+        success: true,
+        message: '🕉️ Pandit Sewa API Server is running',
+        healthCheck: '/api/health',
+        timestamp: new Date().toISOString()
+    });
+});
 
 // Health Check
 app.get('/api/health', (req, res) => {
@@ -307,7 +317,7 @@ app.get('/api/pandits/:id/availability/:date', async (req, res) => {
             [id, date]
         );
 
-        const isAvailable = bookings[0].booking_count === 0;
+        const isAvailable = parseInt(bookings[0].booking_count, 10) === 0;
 
         res.json({
             success: true,
@@ -381,7 +391,7 @@ app.post('/api/bookings', async (req, res) => {
 
         // ==================== VERIFY CUSTOMER EXISTS ====================
         const [customerRows] = await connection.query(
-            'SELECT id FROM users WHERE phone = ? AND role = "customer"',
+            "SELECT id FROM users WHERE phone = ? AND role = 'customer'",
             [customer_phone]
         );
 

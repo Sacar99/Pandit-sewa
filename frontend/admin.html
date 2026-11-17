@@ -112,8 +112,16 @@
 
 </div>
 
+<!-- Shared Configuration -->
+<script src="app-config.js"></script>
+
 <script>
-    const API = 'http://localhost:3000/api';
+    // Uses API_URL from app-config.js if available, otherwise falls back gracefully
+    const API = typeof API_URL !== 'undefined' 
+        ? API_URL 
+        : ((window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') 
+            ? 'http://localhost:3000/api' 
+            : 'https://pandit-sewa-backend.onrender.com/api');
     const dataArea = document.getElementById('dataArea');
     const tabs = document.querySelectorAll('.tab-btn');
 
