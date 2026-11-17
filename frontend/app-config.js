@@ -1,7 +1,7 @@
 // ==================== CONFIG & SAMPLE DATA ====================
 // Automatically detects local environment vs deployed cloud environment.
 // Replace 'https://pandit-sewa-backend.onrender.com' with your actual Render URL after deploying your backend!
-const BACKEND_PROD_URL = 'https://pandit-sewa-backend.onrender.com/api';
+const BACKEND_PROD_URL = 'https://pandit-sewa-1.onrender.com/';
 
 const isLocalhost = Boolean(
     window.location.hostname === 'localhost' ||
